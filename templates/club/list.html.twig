@@ -34,3 +34,24 @@
 </table>
 {% endif %}
 Nb_Formation: {{ tabFormation|length }}
+<br/>
+{% set somme = 0 %}
+somme :
+{% for s in tabFormation %}
+	{% set somme = somme+ s.nb_participants %}
+{% endfor %}
+{{somme}}
+<br/>
+Le Nom de la Formation :
+{% set max = 0 %}
+
+{% for f in tabFormation %}
+	{% set max = max(f.nb_participants, max) %}
+
+	{% if f.nb_participants == max %}
+		{{f.Titre}}
+	{% endif %}
+{% endfor %}
+<br/>
+et de le plus grand nombre de participants :
+{{max}}
