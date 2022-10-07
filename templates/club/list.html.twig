@@ -36,11 +36,12 @@
 Nb_Formation: {{ tabFormation|length }}
 <br/>
 {% set somme = 0 %}
-somme :
+somme des formations:
 {% for s in tabFormation %}
 	{% set somme = somme+ s.nb_participants %}
 {% endfor %}
 {{somme}}
+<br/>
 <br/>
 Le Nom de la Formation :
 {% set max = 0 %}
@@ -53,5 +54,5 @@ Le Nom de la Formation :
 	{% endif %}
 {% endfor %}
 <br/>
-et de le plus grand nombre de participants :
+le plus grand nombre de participants :
 {{max}}
