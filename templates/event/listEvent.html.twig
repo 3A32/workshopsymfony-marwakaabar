@@ -1,0 +1,24 @@
+<a href="{{ path('app_addEvent') }}">Add Event</a>
+<h4>List Events</h4>
+<table border="1">
+ <tr>
+  <td>id</td>
+  <td>Titre</td>
+  <td>dateDebut</td>
+  <td>dateFin</td>
+  <td>Actions</td>
+ </tr>
+{% for i in tabEvents %}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.title|upper}}</td>
+<td>{{i.dateDebut|date("m/d/Y")}}</td>
+<td>{{i.dateFin|date("m/d/Y")}}</td>
+<td>
+<a href="{{ path('app_updateEvent',{'id':i.id}) }}">Update</a>
+<a href="{{ path('app_removeEvent',{'id':i.id}) }}">Delete</a>
+</td>
+<br>
+{% endfor %}
+nb_events = {{tabEvents|length}}
+</br>

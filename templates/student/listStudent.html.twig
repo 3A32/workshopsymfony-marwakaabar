@@ -1,0 +1,11 @@
+<a href="{{ path('app_addStudent') }}">Add Student</a>
+<h4>List Students</h4>
+{% for i in tabStudents %}
+id:{{i.id}}
+nsc:{{i.nsc}}
+email:{{i.email}}
+classroom:{{i.classroom}}
+<a href="{{ path('app_updateStudent',{'id':i.id}) }}">Update</a>
+<a href="{{ path('app_removeStudent',{'id':i.id}) }}">Delete</a>
+<br>
+{% endfor %}
